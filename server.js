@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import cors from "cors";
 
 
 
@@ -19,6 +20,7 @@ connectDB();
 const app = express();
 
 //middlewares
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
@@ -31,8 +33,10 @@ app.get('/', (req, res) => {
     res.send('hello');
 });
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
+
+///https://github.com/guruprasadkaapur/mern_full-app.git

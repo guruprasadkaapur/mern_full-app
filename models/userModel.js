@@ -14,20 +14,20 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-   phone: {
-       type: String,
-       required: true
-   },
-   adress: {
-       type: String,
-       required: true
-   },
-   role: {
-       type: Number,
-       default: 0
-   }
-}, {
-    timestamps: true,
-}); 
+    phone: {
+        type: String,
+        required: true,
+    },
+    adress: { 
+        type: String,
+        required: true,
+    },
+    role: {
+        type: Number,
+        default: 0,
+    },
+});
 
-export default mongoose.model('User', userSchema);
+
+const userModel = mongoose.model("User", userSchema);
+export default userModel;
